@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Prego\Events;
 
 abstract class Event
 {

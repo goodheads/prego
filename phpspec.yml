@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Prego
+        psr4_prefix: Prego
         src_path: app
