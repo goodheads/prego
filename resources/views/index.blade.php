@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+
+
     @if (! Auth::check())
         <h1>Project Management for Human Beings</h1>
 
@@ -12,6 +14,8 @@
 
         <p class="login">Already signed up? <a class="btn btn-large btn-info" href="/auth/signin">Login</a></p>
     @endif
+
+
 
     @if ( Auth::check())
         <div class="container-fluid">
@@ -30,11 +34,14 @@
               <ul class="nav nav-sidebar">
                 <li><a href="">Account</a></li>
                 <li><a href="">Help</a></li>
-                <li><a href="">Sign Out</a></li>
+                <li><a href="{{ route('auth.logout') }}">Sign Out</a></li>
               </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <h1 class="page-header">Dashboard</h1>
+
+              <h2 class="sub-header">Projects</h2>
+              <a class="btn btn-info" href="{{ route('projects.create') }}">New Project</a>
             </div>
           </div>
         </div>

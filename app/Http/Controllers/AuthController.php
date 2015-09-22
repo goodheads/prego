@@ -52,4 +52,11 @@ class AuthController extends Controller
         return redirect()->route('index')->with('info', 'You are now signed in');
     }
 
+    public function logOut()
+    {
+        Auth::logout();
+
+        return redirect()->route('index');
+    }
+
 }
