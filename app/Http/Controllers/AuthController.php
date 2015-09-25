@@ -49,7 +49,7 @@ class AuthController extends Controller
             return redirect()->back()->with('warning', 'Invalid Email or Password');
         }
 
-        return redirect()->route('index')->with('info', 'You are now signed in');
+        return redirect()->route('projects.index')->with('info', 'You are now signed in');
     }
 
     public function logOut()
