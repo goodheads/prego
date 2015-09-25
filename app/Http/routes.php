@@ -48,3 +48,5 @@ Route::get('/logout', [
 
 Route::resource('projects', 'ProjectController');
 
+Route::delete('projects/{projects}', 'ProjectController@destroy');
+

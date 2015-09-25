@@ -20,7 +20,10 @@
         ],
         "psr-4": {
             "Prego\\": "app/"
-        }
+        },
+        "files": [
+            "app/Http/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
