@@ -4,6 +4,7 @@
     <h3><a href={{ route('index') }}> Prego - Project Management App for Human Beings </a></h3>
 
     <h3>Sign in</h3>
+    @include('layouts.partials.alerts')
     <div class="row">
         <div class="col-lg-6">
             <form class="form-vertical" role="form" method="post" action="{{ route('auth.login') }}">

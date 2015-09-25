@@ -3,3 +3,9 @@
         {{ session()->get('info') }}
     </div>
 @endif
+
+@if ( session()->has('warning'))
+    <div class="alert alert-danger" role-"alert">
+        {{ session()->get('warning') }}
+    </div>
+@endif
