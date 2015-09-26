@@ -54,5 +54,15 @@ Route::post('projects/{projects}/tasks', [
     'as' => 'projects.tasks.create'
 ]);
 
+Route::get('projects/{projects}/tasks/{tasks}/edit', [
+    'uses' => '\Prego\Http\Controllers\ProjectTasksController@getOneProjectTask',
+    'as' => 'projects.tasks'
+]);
+
+Route::put('projects/{projects}/tasks/{tasks}', [
+    'uses' => '\Prego\Http\Controllers\ProjectTasksController@updateOneProjectTask',
+]);
+
+
 
 

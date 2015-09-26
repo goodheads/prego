@@ -7,7 +7,7 @@
            @foreach( $tasks as $task)
                 <div>
                     <div><i class="fa fa-check-square-o"></i> <span>{{ $task->task_name }}</span></div>
-                    <a href="#">Edit</a>
+                    <a href="/projects/{{ $project->id }}/tasks/{{ $task->id }}/edit">Edit</a>
                     <button class="btn btn-danger delete pull-right"
                       data-action="#"
                       data-token="{{csrf_token()}}">
