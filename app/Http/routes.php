@@ -63,6 +63,10 @@ Route::put('projects/{projects}/tasks/{tasks}', [
     'uses' => '\Prego\Http\Controllers\ProjectTasksController@updateOneProjectTask',
 ]);
 
+Route::delete('projects/{projects}/tasks/{tasks}', [
+    'uses' => '\Prego\Http\Controllers\ProjectTasksController@deleteOneProjectTask',
+]);
+
 
 
 

@@ -64,4 +64,20 @@ class ProjectTasksController extends Controller
 
         return redirect()->back()->with('info','Your Task has been updated successfully');
     }
+
+    /**
+     * Delete One Project Task
+     * @param  [type] $projectId [description]
+     * @param  [type] $taskId    [description]
+     * @return [type]            [description]
+     */
+    public function deleteOneProjectTask($projectId, $taskId)
+    {
+        DB::table('tasks')
+            ->where('project_id', $projectId)
+            ->where('id', $taskId)
+            ->delete();
+
+        return redirect()->route('projects.show')->with('info', 'Task deleted successfully');
+    }
 }
