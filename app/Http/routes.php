@@ -48,5 +48,11 @@ Route::get('/logout', [
 
 Route::resource('projects', 'ProjectController');
 
-Route::delete('projects/{projects}', 'ProjectController@destroy');
+# Task routes
+Route::post('projects/{projects}/tasks', [
+    'uses' => '\Prego\Http\Controllers\ProjectTasksController@postNewTask',
+    'as' => 'projects.tasks.create'
+]);
+
+
 

@@ -19,35 +19,16 @@
               <p>Comments: 0</p>
               <p>Attachments: 0</p>
               <p><a href="/projects/{{ $project->id }}/edit">Edit</a></p>
-              <button class="btn btn-circle btn-danger delete"
-                      data-action="{{ url('projects/' . $project->id) }}"
-                      data-token="{{csrf_token()}}">
-                <i class="fa fa-trash-o"></i>Delete
-              </button>
+                  <button class="btn btn-circle btn-danger delete"
+                          data-action="{{ url('projects/' . $project->id) }}"
+                          data-token="{{csrf_token()}}">
+                    <i class="fa fa-trash-o"></i>Delete
+                  </button>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-5">
-                <h4 class="page-header">
-                    Tasks
-                </h4>
-                <div class="row" style="border:1px solid #ccc;margin-left:5px;width:100%;padding:15px;">
-                    <form class="form-vertical" role="form" method="post" action="#">
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <input type="text" name="name" class="form-control" id="name" value="{{ old('name') ?: '' }}">
-                            @if ($errors->has('name'))
-                                <span class="help-block">{{ $errors->first('name') }}</span>
-                            @endif
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-info">Create Task</button>
-                        </div>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    </form>
-                </div>
-            </div>
+            @include('tasks.form')
             <div class="col-md-5">
                 <h4 class="page-header">
                     Files
