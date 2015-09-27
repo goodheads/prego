@@ -4,7 +4,9 @@ namespace Prego\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use Auth;
+use Prego\File;
 use Prego\Task;
 use Prego\Project;
 use Prego\Http\Requests;
@@ -72,13 +74,20 @@ class ProjectController extends Controller
     {
         $project = Project::find($id);
         $tasks = $this->getTasks($id);
-        return view('projects.show')->withProject($project)->withTasks($tasks);
+        $files = $this->getFiles($id);
+        return view('projects.show')->withProject($project)->withTasks($tasks)->withFiles($files);
     }
 
     public function getTasks($id)
     {
         $tasks =  Task::project($id)->get();
         return $tasks;
+    }
+
+    public function getFiles($id)
+    {
+        $files =  File::project($id)->get();
+        return $files;
     }
 
     /**
