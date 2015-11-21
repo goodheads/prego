@@ -68,6 +68,17 @@ Route::delete('projects/{projects}/comments/{comments}', [
     'uses' => 'ProjectCommentsController@deleteOneProjectComment',
 ]);
 
+# Collaborator routes
+Route::post('projects/{projects}/collaborators', [
+    'uses' => 'ProjectCollaboratorsController@addCollaborator',
+    'as'   => 'projects.collaborators.create',
+    'middleware' => ['auth']
+]);
+
+Route::delete('projects/{projects}/collaborators/{collaborators}', [
+    'uses' => 'ProjectCollaboratorsController@deleteOneCollaborator',
+]);
+
 # Task routes
 Route::post('projects/{projects}/tasks', [
     'uses' => '\Prego\Http\Controllers\ProjectTasksController@postNewTask',

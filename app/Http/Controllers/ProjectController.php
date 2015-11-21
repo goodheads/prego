@@ -9,6 +9,7 @@ use Prego\File;
 use Prego\Task;
 use Prego\Comment;
 use Prego\Project;
+use Prego\Collaboration;
 use Prego\Http\Requests;
 use Prego\Http\Controllers\Controller;
 
@@ -70,11 +71,17 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project  = Project::find($id);
-        $tasks    = $this->getTasks($id);
-        $files    = $this->getFiles($id);
-        $comments = $this->getComments($id);
-        return view('projects.show')->withProject($project)->withTasks($tasks)->withFiles($files)->withComments($comments);
+        $project       = Project::find($id);
+        $tasks         = $this->getTasks($id);
+        $files         = $this->getFiles($id);
+        $comments      = $this->getComments($id);
+        $collaborators = $this->getCollaborators($id);
+        return view('projects.show')
+                            ->withProject($project)
+                            ->withTasks($tasks)
+                            ->withFiles($files)
+                            ->withComments($comments)
+                            ->withCollaborators($collaborators);
     }
 
     /**
@@ -108,6 +115,17 @@ class ProjectController extends Controller
     {
         $comments = Comment::project($id)->get();
         return $comments;
+    }
+
+    /**
+     * Get all the collaborators on this project
+     * @param  int $id
+     * @return collection
+     */
+    public function getCollaborators($id)
+    {
+        $collaborators = Collaboration::project($id)->get();
+        return $collaborators;
     }
 
     /**

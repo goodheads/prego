@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "jrm2k6/cloudder": "0.2.*"
+        "jrm2k6/cloudder": "0.2.*",
+        "unicodeveloper/laravel-mentions": "1.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
