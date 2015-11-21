@@ -22,7 +22,7 @@ class FilesController extends Controller
             'file_name'     => 'required|mimes:jpeg,bmp,png,pdf|between:1,7000',
         ]);
 
-        $filename     = $request->file('file_name')->getRealPath();
+        $filename  = $request->file('file_name')->getRealPath();
 
         Cloudder::upload($filename, null);
         list($width, $height) = getimagesize($filename);

@@ -23,7 +23,7 @@ class ProjectTasksController extends Controller
         ]);
 
        $task->task_name       = $request->input('task_name');
-       $task->project_id = $id;
+       $task->project_id      = $id;
 
        $task->save();
 
@@ -41,6 +41,7 @@ class ProjectTasksController extends Controller
         $task = Task::where('project_id', $projectId)
                       ->where('id', $taskId)
                       ->first();
+
         return view('tasks.edit')->withTask($task)->with('projectId', $projectId);
     }
 

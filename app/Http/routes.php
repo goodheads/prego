@@ -48,6 +48,26 @@ Route::get('/logout', [
 
 Route::resource('projects', 'ProjectController');
 
+# Comment routes
+Route::post('projects/{projects}/comments', [
+    'uses' => 'ProjectCommentsController@postNewComment',
+    'as'   => 'projects.comments.create',
+    'middleware' => ['auth']
+]);
+
+Route::get('projects/{projects}/comments/{comments}/edit', [
+    'uses' => 'ProjectCommentsController@getOneProjectComment',
+    'as' => 'projects.comments'
+]);
+
+Route::put('projects/{projects}/comments/{comments}', [
+    'uses' => 'ProjectCommentsController@updateOneProjectComment',
+]);
+
+Route::delete('projects/{projects}/comments/{comments}', [
+    'uses' => 'ProjectCommentsController@deleteOneProjectComment',
+]);
+
 # Task routes
 Route::post('projects/{projects}/tasks', [
     'uses' => '\Prego\Http\Controllers\ProjectTasksController@postNewTask',
@@ -72,6 +92,7 @@ Route::post('projects/{projects}/files', [
      'as'   => 'projects.files',
      'middleware' => ['auth']
 ]);
+
 
 
 

@@ -4,10 +4,10 @@ namespace Prego\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 use Auth;
 use Prego\File;
 use Prego\Task;
+use Prego\Comment;
 use Prego\Project;
 use Prego\Http\Requests;
 use Prego\Http\Controllers\Controller;
@@ -24,8 +24,6 @@ class ProjectController extends Controller
         $projects = Project::personal()->get();
         return view('projects.index')->withProject($projects);
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -72,22 +70,44 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Project::find($id);
-        $tasks = $this->getTasks($id);
-        $files = $this->getFiles($id);
-        return view('projects.show')->withProject($project)->withTasks($tasks)->withFiles($files);
+        $project  = Project::find($id);
+        $tasks    = $this->getTasks($id);
+        $files    = $this->getFiles($id);
+        $comments = $this->getComments($id);
+        return view('projects.show')->withProject($project)->withTasks($tasks)->withFiles($files)->withComments($comments);
     }
 
+    /**
+     * Get all the tasks that belongs to a project
+     * @param  integer $id
+     * @return collection
+     */
     public function getTasks($id)
     {
         $tasks =  Task::project($id)->get();
         return $tasks;
     }
 
+    /**
+     * Get all the files that were attached to a project
+     * @param  integer $id
+     * @return collection
+     */
     public function getFiles($id)
     {
         $files =  File::project($id)->get();
         return $files;
+    }
+
+    /**
+     * Get all the comments that were made on a Project
+     * @param  integer $id
+     * @return collection
+     */
+    public function getComments($id)
+    {
+        $comments = Comment::project($id)->get();
+        return $comments;
     }
 
     /**
@@ -112,9 +132,10 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $project = Project::findOrFail($id);
+
         $this->validate($request, [
             'project_name'     => 'required|min:3',
-            'due-date' => 'required|date|after:today',
+            'due-date'         => 'required|date|after:today',
             'project_notes'    => 'required|min:10',
             'project_status'   => 'required'
         ]);
