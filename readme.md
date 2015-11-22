@@ -1,27 +1,26 @@
-## Laravel PHP Framework
+## Prego - Simple Project Management App
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Prego is a simple project management app built for the purpose of teaching people how to build applications with Laravel 5.
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+The complete tutorial can be found on [goodheads.io](http://goodheads.io)
 
-## Contributing
+[How to build a project management app with Laravel 5 - Part 9](http://goodheads.io/2015/11/21/how-to-build-a-project-management-app-in-laravel-5-part-9/)
+[How to build a project management app with Laravel 5 - Part 8](http://goodheads.io/2015/11/21/how-to-build-a-project-management-app-in-laravel-5-part-8/)
+[How to build a project management app with Laravel 5 - Part 7](http://goodheads.io/2015/09/24/how-to-build-a-project-management-app-in-laravel-5-part-7/)
+[How to build a project management app with Laravel 5 - Part 6](http://goodheads.io/2015/09/23/how-to-build-a-project-management-app-in-laravel-5-part-6/)
+[How to build a project management app with Laravel 5 - Part 5](http://goodheads.io/2015/09/22/how-to-build-a-project-management-app-in-laravel-5-part-5/)
+[How to build a project management app with Laravel 5 - Part 4](http://goodheads.io/2015/09/21/how-to-build-a-project-management-app-in-laravel-5-part-4/)
+[How to build a project management app with Laravel 5 - Part 3](http://goodheads.io/2015/09/20/how-to-build-a-project-management-app-in-laravel-5-part-3/)
+[How to build a project management app with Laravel 5 - Part 2](http://goodheads.io/2015/09/17/how-to-build-a-project-management-app-in-laravel-5-part-2/)
+[How to build a project management app with Laravel 5 - Part 1](http://goodheads.io/2015/09/16/how-to-build-a-project-management-app-in-laravel-5-part-1/)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Credits
 
-## Security Vulnerabilities
+- [Prosper Otemuyiwa](https://twitter.com/unicodeveloper)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-### License
+## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The source code is open-sourced software licensed under the [MIT license](LICENSE.md)
