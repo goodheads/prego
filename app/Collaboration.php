@@ -43,4 +43,9 @@ class Collaboration extends Model
         return $this->belongsTo(User::class, 'collaborator_id');
     }
 
+    public function projects()
+    {
+        return $this->belongsTo(Project::class, 'project_id');
+    }
+
 }
